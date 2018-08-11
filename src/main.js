@@ -15,12 +15,6 @@ $(document).ready(function() {
     $('#symptom').val("");
     let betterDoctorAPI = new BetterDoctorAPI();
     let newSearch = betterDoctorAPI.getSearches(name, symptom, perPage);
-
-    // let newSearch = getSearches(name, symptom, perPage);
-    // $('#result').empty();
-    // $('.results').show();
-    // $('.home').hide();
-    // debugger;
     newSearch.then(function(response) {
       let body = JSON.parse(response);
       if ( body.data.length === 0) {
