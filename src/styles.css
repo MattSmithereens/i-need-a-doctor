@@ -1,3 +1,18 @@
 body {
+  min-height: 1300px;
   background-color: #fffff0;
+}
+
+.results {
+  display: none;
+  padding-top: 20px;
+}
+
+.noResults {
+  display: block;
+  margin: auto;
+}
+
+label.formText {
+  width: 175px;
 }

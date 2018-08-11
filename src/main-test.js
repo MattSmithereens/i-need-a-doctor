@@ -1,27 +1,23 @@
-import {GeocoderAPI} from './geocoder'; // use this or keep it simple and hae user type city?
-import {BetterDoctorAPI} from './js/BetterDoctorAPI';
+import {BikeIndexAPI} from './bike-index';
+import {GeocoderAPI} from './geocoder';
+import {WeatherServiceAPI} from './weather';
+import {DateFactAPI} from './DateTrivia';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function() {
-  $(".docSearchForm").submit(function(event){
+  $(".bike-zip").submit(function(event){
     event.preventDefault();
-    let name = $('#name').val();            // search by name
-    let symptom = $('#symptom').val();      // search by symptom
-    //let location = $('#location').val();    // with geocoder
-    let perPage = $('#perPage').val();      // results per page
+    let zip = $("#zip").val();
+    $('#results').text("");
+    $('#zip').val("");
+    let newGeoCoder = new GeocoderAPI();  // create instance of WeatherService class
+    let latLong = newGeoCoder.getLatLong(zip);
 
-    let docSearch = BetterDoctorAPI(name, symptom, perPage); // add loc later
-
-    // let newGeoCoder = new GeocoderAPI();    // create instance of WeatherService class
-    // let latLong = newGeoCoder.getLatLong(zip);
-
-    docSearch.then(function(response) {
+    latLong.then(function(response) {
       let body = JSON.parse(response);
-      if ( body.data.length === 0) {
-      $("#result").append("No results found for that search."); // no results condition
       let lat = body.results["0"].geometry.location.lat;
       let long = body.results["0"].geometry.location.lng;
       let newWeatherForecast = new WeatherServiceAPI();

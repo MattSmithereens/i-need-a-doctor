@@ -25,7 +25,7 @@ This site will allow a user to search for a doctor in Portland via a number of c
 * `npm install` to install dependencies
 * `npm run start` to build and start the dev server
 * `npm run lint` to explicitly run ESLint
-* `npm run test` to run the unit tests with Karma and Jasmine. Visit `localhost:9876` to view the tests.
+* `npm run test` to run the unit tests with Karma and Jasmine. Visit `localhost:8080` to view the tests.
 
 ## Contribution Requirements
 
