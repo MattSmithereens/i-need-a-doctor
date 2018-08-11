@@ -18,7 +18,7 @@ $(document).ready(function() {
     newSearch.then(function(response) {
       let body = JSON.parse(response);
       if ( body.data.length === 0) {
-      $("#result").append("No results found for that search.");
+        $("#result").append("No results found for that search.");
       } else {
 
         for (let i = 0; i < body.data.length; i++) {
