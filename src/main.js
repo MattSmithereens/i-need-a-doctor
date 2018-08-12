@@ -23,8 +23,9 @@ $(document).ready(function() {
       } else {
 
         for (let i = 0; i < body.data.length; i++) {
-          $('#result').append(
-            '<p>${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</p>'
+          $('#result').html(
+            '<p>${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</p> this is the body rendering'
+
           );
         }
       }
