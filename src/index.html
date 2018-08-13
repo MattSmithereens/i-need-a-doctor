@@ -7,57 +7,42 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2>I need a doctor in Portland!</h2>
-            </div>
-            <div class="panel-body">
-              <p>If you're experiencing serious symptoms, call 911 immediately</p>
-            </div>
-          </div>
+          <h3>I need a doctor in Portland!</h3>
+          <p>If you're experiencing serious symptoms, call 911 immediately</p>
         </div>
-        <div class="col-md-6">
-          <ul id="result">result
-          </ul>
-        </div>
-        <ul class="showErrors">
-        </ul>
-      </div>
-
-
-
-
-
-      <div class="col-md-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
+        <div>
+          <div>
             <h2>search:</h2>
           </div>
-          <div class="panel-body">
+          <div>
             <form id="form-control">
               <label class="formText" for="per-page">Enter max # results:</label>
-              <input id="per-page" value="10" type="number">
+              <input id="per-page" value="10"  max="25" type="number">
               <br>
               <label class="formText" for="symptom">Enter symptom: <br><small>eg. internal</small></label>
               <input id="symptom" value="" type="text">
-              <!-- <br>
-              <label class="formText" for="location">Enter location(st-city):</label>
-              <input id="location" value="or-portland" type="text">
+              <br>
+              <!-- <label class="formText" for="location">Enter zip:</label>
+              <input id="location" value="97266" type="number">
               <br> -->
               <label class="formText" for="name">Enter Doctor Name <br><small>first, last or partial.  eg. smith</small></label>
               <input id="name" value="" type="text">
               <br>
-              <button type="submit">Search</button>
+              <button type="submit">Search</button>&nbsp;<button onclick="myFunction()">Clear Searches</button>
             </form>
           </div>
         </div>
+        <div class="col-md-6">
+          <ul id="result">
+        </div>
+        <ul class="showErrors">
+        </ul>
       </div>
-      <!-- <button class="btn btn-danger" onclick="myFunction()">Reload page</button> -->
    </div>
-    <!-- <script>
+    <script>
         function myFunction() {
             location.reload();
         }
-    </script> -->
-  </body>
+    </script>
+</body>
 </html>
