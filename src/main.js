@@ -21,11 +21,11 @@ $(document).ready(function() {
         $("#result").append("No results found for that search.");
       } else {
         for (let i = 0; i < body.data.length; i++) {
-          $('#result').append(   `<h3>${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</h3>
-                                <li>${body.data[i].practices[0].visit_address.street}</li>
-                                <li>${body.data[i].practices[0].visit_address.city}, ${body.data[i].practices[0].visit_address.state} ${body.data[i].practices[0].visit_address.zip}</li>
-                                <li>${body.data[i].specialties[0].name}</li>
-                                <li>${body.data[i].practices[0].phones[0].number}</li>`
+          $('#result').append(`<h4>${body.data[i].profile.first_name} ${body.data[i].profile.last_name}</h4>
+                              <li>${body.data[i].practices[0].visit_address.street}</li>
+                              <li>${body.data[i].practices[0].visit_address.city}, ${body.data[i].practices[0].visit_address.state} ${body.data[i].practices[0].visit_address.zip}</li>
+                              <li>${body.data[i].specialties[0].name}</li>
+                              <li>${body.data[i].practices[0].phones[0].number}</li>`
           );
           if (body.data[i].practices[0].website === undefined) {
             $('#result').append('');
@@ -34,11 +34,11 @@ $(document).ready(function() {
           }
 
           if (body.data[i].practices[0].accepts_new_patients === true) {
-            $('#result').append(`<li>Accepting new patients.</li>`);
+            $('#result').append(`<li>Accepting new patients.</li><hr><br>`);
           } else if (body.data[i].practices[0].accepts_new_patients === false) {
-            $('#result').append(`<li>Currently not accepting new patients.</li>`);
+            $('#result').append(`<li>Currently not accepting new patients.</li><hr><br>`);
           } else {
-            $('#result').append(`<li>Contact to see if accepting new patients.</li>`);
+            $('#result').append(`<li>Contact to see if Dr.${body.data[i].profile.first_name} ${body.data[i].profile.last_name} is accepting new patients.</li><hr><br>`);
           }
         }
       }
